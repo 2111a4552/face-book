@@ -1,0 +1,23 @@
+img{
+    width: 100px;
+    margin: 5% auto;
+    display: block;
+}
+.container{
+     text-align: conter;
+}
+input,a{
+    width: 250px;
+    margin-bottom: 10px ;
+    padding-top:15px ;
+}
+button{
+    width: 257px;
+    padding: 6px;
+}
+a{
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: underline;
+}
