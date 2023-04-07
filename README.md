@@ -1,49 +1,57 @@
-body{
-    background-color: rgb(234, 234, 234);
+import FacebookLogin from 'react-facebook-login'
+import React, { Component } from 'react'
+export default class facebook extends Component{
+    state = {
+        isLoggedIn: false,
+        userID: '',
+        name: '',
+        email: '',
+        picture: ''
+};
+
+
+responseFacebook = response => {
+ // console. log(response);
+
+ this.setState({
+    isLoggedIn: true,
+    userID: response.userID,
+    name: response.name,
+    email: response.email,
+    picture: response.picture.data.url
+ })
 }
-img{
-    width: 100px;
-    margin: 5% auto;
-    display: block;
-}
-.container{
-    background-color: white;
-    margin-left:25%;
-    margin-right: 25%;
-    padding-top:5%;
-    padding-bottom: 5%;
-     text-align: conter;
-     border: 0px;
-     border-radius: 5px;
-}
-input,a{
-    width: 250px;
-    margin-bottom: 10px ;
-    padding-top:15px ;
-}
-.login{
-    width: 257px;
-    padding: 6px;
-}
-a{
-    text-decoration: none;
-    color: rgb(11, 11, 188);
-}
-a:hover{
-    text-decoration: underline;
-}
-.login{
-    background-color: blue;
-    color: white;
-    border: 0px;
-    padding:6px;
-    border-radius: 2px;
-}
-.cna{
-    padding:6px;
-    width:200px;
-    color: white;
-    background-color: rgb(72, 228, 29);
-    border:0px;
-    border-radius: 2px;
-}
+
+compponentclicked = () => console.log("clicked");
+
+    return() {
+        let fbContent;
+
+        if(this.state.isLoggedIn) {
+            fbContent = (
+                <dvi style={{
+                    width: '400px',
+                    margin: 'auto',
+                    backround: '#f4f4f4',
+                    padding: '20px'
+                }}>
+                  <img src={this.state.picture} alt={this.setState.name} />
+                  <h2>welcom {this.state.name}</h2>
+                  Email{this.state.email}
+                </dvi>
+            )
+        } else {
+          fbContent= (
+          <FacebookLogin
+            appId="528837619424958"
+            autoLoad={true}
+            fields="name,email,picture"
+            onClick={this.componentClicked}
+            callback={this.responseFacebook}
+             />
+         );
+        }
+
+        return <div>{fbContent}</div> 
+    }
+}   
