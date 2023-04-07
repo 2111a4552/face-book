@@ -1,30 +1,49 @@
-# face-book
-face book clone
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Facebook page</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <img src="./fb.jpg" alt="fb logo">
-    <center>
-    <div class="container">
-        <label for="">Email Address</label><br>
-       <input type="text" class="name" placeholder="Email address or phone number"/>
-       <br/>
-       <label for="">Password</label><br>
-       <input type="password" class="password" placeholder="password"/>
-       <br/>
-       <button class="login">Login</button>
-       <br/>
-       <a>Foget password?</a>
-       <hr/>
-       <button class="cna">create new Account</button>
-    </div>
-</center>
-</body>
-</html>
+body{
+    background-color: rgb(234, 234, 234);
+}
+img{
+    width: 100px;
+    margin: 5% auto;
+    display: block;
+}
+.container{
+    background-color: white;
+    margin-left:25%;
+    margin-right: 25%;
+    padding-top:5%;
+    padding-bottom: 5%;
+     text-align: conter;
+     border: 0px;
+     border-radius: 5px;
+}
+input,a{
+    width: 250px;
+    margin-bottom: 10px ;
+    padding-top:15px ;
+}
+.login{
+    width: 257px;
+    padding: 6px;
+}
+a{
+    text-decoration: none;
+    color: rgb(11, 11, 188);
+}
+a:hover{
+    text-decoration: underline;
+}
+.login{
+    background-color: blue;
+    color: white;
+    border: 0px;
+    padding:6px;
+    border-radius: 2px;
+}
+.cna{
+    padding:6px;
+    width:200px;
+    color: white;
+    background-color: rgb(72, 228, 29);
+    border:0px;
+    border-radius: 2px;
+}
