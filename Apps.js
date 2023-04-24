@@ -23,7 +23,7 @@ passport.use(new facebookStrategy({
     // pull in our app id and secret from our auth.js file
     clientID        : "185281703920262", 
     clientSecret    : "db59f04292c54832b547c9bf498a8a6e",
-    callbackURL     : "http://localhost:5000/facebook/callback",
+    callbackURL     : ["http://localhost:5000/facebook/callback", "https://connect.facebook.net/en_US/sdk.js"],
     profilefields: ['id', 'displayName', 'name', 'gender', 'picture.type(large)', 'email']
 
 },
@@ -100,5 +100,5 @@ passport.serializeUser (function(user, done) {
 });
 
 app.listen(5000,() =>{
-    console.log("App is listening on Port 3000")
+    console.log("App is listening on Port 5000")
 })
